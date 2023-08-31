@@ -1,0 +1,6 @@
+CRITICAL - 2023-08-29 23:54:06 --> App\Controllers\Music::index(): Return value must be of type string, none returned
+in APPPATH\Controllers\Music.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Music->index()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Music))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

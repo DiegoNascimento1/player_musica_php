@@ -1,0 +1,25 @@
+version: '3.3'
+
+volumes:
+  data:
+services:
+  web:
+    image: nginx:latest
+    container_name: nginx-music-player
+    restart: always
+    ports: 
+      - 5001:80
+    volumes:
+      - .:/var/www/music_player
+      - ./docker_config/nginx/app.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+  php:
+    build:
+      dockerfile: ./docker_config/php/php81-dockerfile
+      context: ./
+    image: php81-dockerfile
+    container_name: php-music-player
+    volumes:
+      - .:/var/www/music_player
+      - ./docker_config/php/php.ini:/usr/local/etc/php/php.ini
